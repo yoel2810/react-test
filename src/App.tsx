@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import Hero from "./components/Hero/Hero";
@@ -40,9 +40,10 @@ function App() {
   const [birthdayReached, setBirthdayReached] = useState(
     () => new Date(BIRTHDAY) <= new Date(),
   );
+  const justUnlockedRef = useRef(false);
 
   useEffect(() => {
-    if (!birthdayReached) return;
+    if (!birthdayReached || !justUnlockedRef.current) return;
     confetti({
       particleCount: 150,
       spread: 90,
@@ -55,7 +56,10 @@ function App() {
     return (
       <LockScreen
         date={BIRTHDAY}
-        onUnlock={() => setBirthdayReached(true)}
+        onUnlock={() => {
+          justUnlockedRef.current = true;
+          setBirthdayReached(true);
+        }}
       />
     );
   }
@@ -89,7 +93,7 @@ function App() {
         <Surprise />
       </AnimatedSection>
 
-      <MusicPlayer src={MUSIC_SRC} autoPlay={birthdayReached} />
+      <MusicPlayer src={MUSIC_SRC} autoPlay />
     </motion.div>
   );
 }
