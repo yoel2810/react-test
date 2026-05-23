@@ -41,6 +41,7 @@ export const cardSx: SxProps<Theme> = {
   overflow: 'hidden',
   background: '#fff',
   boxShadow: '0 4px 20px rgba(0,51,102,0.08)',
+  cursor: 'pointer',
   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   '&:hover': {
     transform: 'translateY(-6px)',

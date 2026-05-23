@@ -9,7 +9,7 @@ import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
 import { photos } from "./data/photos";
 import { letters } from "./data/letters";
 
-const BIRTHDAY = "2026-05-23T13:00:00";
+const BIRTHDAY = "2026-05-26T00:00:00";
 const MUSIC_SRC = `${import.meta.env.BASE_URL}music/song.mp3`;
 
 const scrollReveal = {

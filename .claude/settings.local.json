@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(rtk npm *)"
+      "Bash(rtk npm *)",
+      "Bash(rtk read *)",
+      "Bash(rtk git *)",
+      "Bash(rtk ls *)",
+      "PowerShell(New-Item *)",
+      "Bash(Get-ChildItem *)",
+      "Bash(node -e \"const p = require\\('./node_modules/@mui/material/package.json'\\); console.log\\(p.version\\)\")",
+      "Bash(node -e \"const d = require\\('./node_modules/@mui/material/Dialog/Dialog.js'\\); console.log\\(Object.keys\\(d\\)\\)\")",
+      "Bash(node -e \"const {DialogProps} = require\\('./node_modules/@mui/material'\\); console.log\\('ok'\\)\")",
+      "Bash(rtk grep *)",
+      "mcp__plugin_playwright_playwright__browser_navigate"
     ]
   }
 }

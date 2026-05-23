@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback } from 'react';
-import { Box, Typography } from '@mui/material';
-import { motion, AnimatePresence } from 'framer-motion';
-import type { SurpriseProps } from './Surprise.types';
+import { useState, useEffect, useCallback } from "react";
+import { Box, Typography } from "@mui/material";
+import { motion, AnimatePresence } from "framer-motion";
+import type { SurpriseProps } from "./Surprise.types";
 import {
   sectionSx,
   sectionTitleSx,
@@ -12,9 +12,9 @@ import {
   overlayTitleSx,
   overlayBodySx,
   closeHintSx,
-} from './Surprise.styles';
+} from "./Surprise.styles";
 
-export default function Surprise({ triggerLabel = 'תמיד' }: SurpriseProps) {
+export default function Surprise({ triggerLabel = "תמיד" }: SurpriseProps) {
   const [open, setOpen] = useState(false);
 
   const close = useCallback(() => setOpen(false), []);
@@ -22,10 +22,10 @@ export default function Surprise({ triggerLabel = 'תמיד' }: SurpriseProps) {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close();
+      if (e.key === "Escape") close();
     };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [open, close]);
 
   return (
@@ -33,10 +33,11 @@ export default function Surprise({ triggerLabel = 'תמיד' }: SurpriseProps) {
       <Box component="section" id="surprise" sx={sectionSx}>
         <Typography sx={sectionTitleSx}>משהו קטן נוסף</Typography>
         <Typography sx={sectionBodySx}>
-          את יודעת שיש דברים שהם פשוט מעבר למילים? זה בשבילך — סוד קטן שמסתתר ממש כאן, ממתין בסבלנות. יש דברים ששווה למצוא.
+          את יודעת שיש דברים שהם פשוט מעבר למילים? זה בשבילך — סוד קטן שמסתתר
+          ממש כאן, ממתין בסבלנות. יש דברים ששווה למצוא.
         </Typography>
         <Typography sx={sectionBodySx}>
-          אני אאהב אותך{' '}
+          אני אאהב אותך{" "}
           <Box
             component="span"
             sx={triggerWordSx}
@@ -56,27 +57,46 @@ export default function Surprise({ triggerLabel = 'תמיד' }: SurpriseProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            style={{ position: 'fixed', inset: 0, zIndex: 1300 }}
+            style={{ position: "fixed", inset: 0, zIndex: 1300 }}
           >
             <Box sx={overlayBackdropSx} onClick={close}>
               <motion.div
                 initial={{ scale: 0.85, opacity: 0, y: 30 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.85, opacity: 0, y: 30 }}
-                transition={{ duration: 0.4, ease: 'easeOut' }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
                 onClick={(e) => e.stopPropagation()}
               >
                 <Box sx={overlayCardSx}>
-                  <Typography sx={{ fontSize: '2.5rem', mb: 2 }}>💌</Typography>
+                  <Typography sx={{ fontSize: "2.5rem", mb: 2 }}>💌</Typography>
                   <Typography sx={overlayTitleSx}>מצאת את זה</Typography>
+                  <div
+                    className="tenor-gif-embed"
+                    data-postid="9206364076996243934"
+                    data-share-method="host"
+                    data-aspect-ratio="1"
+                    data-width="100%"
+                  >
+                    <a href="https://tenor.com/view/dog-long-ahh-pee-gif-9206364076996243934">
+                      Dog Long Ahh Pee GIF
+                    </a>
+                    from{" "}
+                    <a href="https://tenor.com/search/dog+long+ahh+pee-gifs">
+                      Dog Long Ahh Pee GIFs
+                    </a>
+                  </div>{" "}
+                  <script
+                    type="text/javascript"
+                    async
+                    src="https://tenor.com/embed.js"
+                  ></script>
                   <Typography sx={overlayBodySx}>
-                    זוהי ההודעה הסודית שהסתרתי רק בשבילך, גלי. כי את ראויה לאוצרות קטנים מוסתרים — רגעים שמזכירים לך כמה את מיוחדת.
-                    {'\n\n'}
-                    את האדם האהוב עליי מכולם. ההרפתקה הגדולה שלי. הבית שלי. לא משנה לאן החיים יקחו אותנו, זה לעולם לא ישתנה.
-                    {'\n\n'}
-                    יום הולדת שמח. אני אוהב אותך — תמיד. 💙
+                    פיפי כי אני יודע שאת אוהבת. את תמיד יכולה לסמן עליי
+                    טריטוריה.
                   </Typography>
-                  <Typography sx={closeHintSx}>לחץ Esc או לחץ מחוץ לחלון לסגירה</Typography>
+                  <Typography sx={closeHintSx}>
+                    לחץ Esc או לחץ מחוץ לחלון לסגירה
+                  </Typography>
                 </Box>
               </motion.div>
             </Box>
