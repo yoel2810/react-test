@@ -75,10 +75,7 @@ function App() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <CountdownTimer
-          date={BIRTHDAY}
-          onBirthdayReached={() => setBirthdayReached(true)}
-        />
+        <CountdownTimer date={BIRTHDAY} />
       </AnimatedSection>
 
       <AnimatedSection>
