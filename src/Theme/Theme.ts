@@ -3,45 +3,47 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#003366',
-      light: '#4d6fa3',
-      dark: '#001a33',
+      main: '#e8929e',
+      light: '#f4b8c1',
+      dark: '#c9a96e',
     },
     secondary: {
       main: '#c9a96e',
-      light: '#e8d0a3',
+      light: '#f4b8c1',
       dark: '#a07840',
     },
     background: {
-      default: '#faf8f5',
-      paper: '#ffffff',
+      default: '#0d0a12',
+      paper: '#160f1e',
     },
     text: {
-      primary: '#1a1a2e',
-      secondary: '#4a4a6a',
+      primary: 'rgba(255,255,255,0.88)',
+      secondary: 'rgba(255,255,255,0.55)',
     },
   },
   typography: {
-    fontFamily: '"Frank Ruhl Libre", "David", serif',
+    fontFamily: '"Inter", "Arial", sans-serif',
     h1: {
-      fontFamily: '"Frank Ruhl Libre", "David", serif',
+      fontFamily: '"Playfair Display", serif',
       fontWeight: 700,
     },
     h2: {
-      fontFamily: '"Frank Ruhl Libre", "David", serif',
-      fontWeight: 500,
+      fontFamily: '"Playfair Display", serif',
+      fontWeight: 700,
     },
     h3: {
-      fontFamily: '"Frank Ruhl Libre", "David", serif',
-      fontWeight: 500,
+      fontFamily: '"Playfair Display", serif',
+      fontWeight: 600,
     },
     body1: {
-      fontFamily: '"Heebo", "Arial", sans-serif',
+      fontFamily: '"Inter", "Arial", sans-serif',
+      fontWeight: 300,
       fontSize: '1rem',
       lineHeight: 1.7,
     },
     body2: {
-      fontFamily: '"Heebo", "Arial", sans-serif',
+      fontFamily: '"Inter", "Arial", sans-serif',
+      fontWeight: 300,
       lineHeight: 1.6,
     },
   },
