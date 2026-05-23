@@ -22,26 +22,26 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Playfair Display", "Georgia", serif',
+    fontFamily: '"Frank Ruhl Libre", "David", serif',
     h1: {
-      fontFamily: '"Playfair Display", "Georgia", serif',
+      fontFamily: '"Frank Ruhl Libre", "David", serif',
       fontWeight: 700,
     },
     h2: {
-      fontFamily: '"Playfair Display", "Georgia", serif',
-      fontWeight: 600,
+      fontFamily: '"Frank Ruhl Libre", "David", serif',
+      fontWeight: 500,
     },
     h3: {
-      fontFamily: '"Playfair Display", "Georgia", serif',
-      fontWeight: 600,
+      fontFamily: '"Frank Ruhl Libre", "David", serif',
+      fontWeight: 500,
     },
     body1: {
-      fontFamily: '"Lato", "Helvetica Neue", sans-serif',
+      fontFamily: '"Heebo", "Arial", sans-serif',
       fontSize: '1rem',
       lineHeight: 1.7,
     },
     body2: {
-      fontFamily: '"Lato", "Helvetica Neue", sans-serif',
+      fontFamily: '"Heebo", "Arial", sans-serif',
       lineHeight: 1.6,
     },
   },

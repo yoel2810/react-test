@@ -1,7 +1,7 @@
-import { Box, Typography } from '@mui/material';
-import { KeyboardArrowDown } from '@mui/icons-material';
-import { motion } from 'framer-motion';
-import type { HeroProps } from './Hero.types';
+import { Box, Typography } from "@mui/material";
+import { KeyboardArrowDown } from "@mui/icons-material";
+import { motion } from "framer-motion";
+import type { HeroProps } from "./Hero.types";
 import {
   heroSectionSx,
   heroNameSx,
@@ -10,19 +10,24 @@ import {
   scrollCtaSx,
   floatingOrb1Sx,
   floatingOrb2Sx,
-} from './Hero.styles';
+} from "./Hero.styles";
 
 function fadeUpProps(delay: number) {
   return {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.7, delay, ease: 'easeOut' as const },
+    transition: { duration: 0.7, delay, ease: "easeOut" as const },
   };
 }
 
-export default function Hero({ name = 'Gali', targetSectionId = 'countdown' }: HeroProps) {
+export default function Hero({
+  name = "Gali",
+  targetSectionId = "countdown",
+}: HeroProps) {
   const scrollToNext = () => {
-    document.getElementById(targetSectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById(targetSectionId)
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -35,25 +40,39 @@ export default function Hero({ name = 'Gali', targetSectionId = 'countdown' }: H
       </motion.div>
 
       <motion.div {...fadeUpProps(0.2)}>
-        <Typography sx={heroHeadlineSx}>
-          יום הולדת שמח, אהובתי ✨
-        </Typography>
+        <Typography sx={heroHeadlineSx}>יום הולדת שמח, מיי לאב ✨</Typography>
       </motion.div>
 
       <motion.div {...fadeUpProps(0.4)}>
         <Typography sx={heroSubtextSx}>
-          כל רגע איתך הוא מתנה. היום אנחנו חוגגים אותך — את האור שלך, את הצחוק שלך, וכל מה שהופך אותך למיוחדת כל כך.
+          אני כל כך שרוף עלייך, את לא מבינה אפילו כמה לדבר איתך עושה לי את היום
+          (ושלא נדבר על לראות אותך). מקווה שזה לא קיצ'י מדי.
         </Typography>
       </motion.div>
 
-      <motion.div {...fadeUpProps(0.7)} style={{ cursor: 'pointer' }} onClick={scrollToNext}>
+      <motion.div
+        {...fadeUpProps(0.7)}
+        style={{ cursor: "pointer" }}
+        onClick={scrollToNext}
+      >
         <Box sx={scrollCtaSx}>
-          <Typography variant="body2" sx={{ letterSpacing: '0.15em', textTransform: 'uppercase', fontSize: '0.75rem' }}>
+          <Typography
+            variant="body2"
+            sx={{
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              fontSize: "0.75rem",
+            }}
+          >
             גלול לגלות
           </Typography>
           <motion.div
             animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.4, ease: 'easeInOut' as const }}
+            transition={{
+              repeat: Infinity,
+              duration: 1.4,
+              ease: "easeInOut" as const,
+            }}
           >
             <KeyboardArrowDown fontSize="large" />
           </motion.div>
