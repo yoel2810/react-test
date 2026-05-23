@@ -50,10 +50,12 @@ export default function Lightbox({
             <ArrowBackIosNewIcon />
           </IconButton>
         )}
-        <Box component="img" src={photo.image} alt={photo.alt} sx={imageSx} />
-        {photo.caption && (
-          <Typography sx={captionSx}>{photo.caption}</Typography>
-        )}
+        <Box>
+          <Box component="img" src={photo.image} alt={photo.alt} sx={imageSx} />
+          {photo.caption && (
+            <Typography sx={captionSx}>{photo.caption}</Typography>
+          )}
+        </Box>
         {!isLast && (
           <IconButton sx={nextArrowSx} onClick={onNext} aria-label="next photo">
             <ArrowForwardIosIcon />
