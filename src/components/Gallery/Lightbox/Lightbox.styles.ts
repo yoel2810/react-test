@@ -1,10 +1,12 @@
 import type { SxProps, Theme } from "@mui/material";
 
 export const dialogPaperSx: SxProps<Theme> = {
-  background: "rgba(0, 0, 0, 0.95)",
-  boxShadow: "none",
+  background: 'rgba(13,10,18,0.97)',
+  border: '1px solid rgba(244,184,193,0.12)',
+  boxShadow: '0 0 80px rgba(232,146,158,0.1)',
   m: 2,
-  overflow: "hidden",
+  overflow: 'hidden',
+  borderRadius: '20px',
 };
 
 export const contentBoxSx: SxProps<Theme> = {
@@ -29,6 +31,7 @@ export const imageSx: SxProps<Theme> = {
   maxWidth: "100%",
   objectFit: "contain",
   display: "block",
+  borderRadius: '8px',
 };
 
 export const imageLoadingSx: SxProps<Theme> = {
@@ -37,15 +40,16 @@ export const imageLoadingSx: SxProps<Theme> = {
 };
 
 export const loaderSx: SxProps<Theme> = {
-  color: "rgba(255,255,255,0.7)",
+  color: 'rgba(244,184,193,0.7)',
 };
 
 export const captionSx: SxProps<Theme> = {
   textAlign: "center",
-  color: "rgba(255,255,255,0.85)",
-  fontFamily: '"Lato", sans-serif',
+  color: 'rgba(255,255,255,0.6)',
+  fontFamily: '"Inter", sans-serif',
+  fontWeight: 300,
   fontStyle: "italic",
-  fontSize: "1rem",
+  fontSize: "0.9rem",
   mt: 2,
   px: 2,
 };
@@ -55,9 +59,14 @@ export const prevArrowSx: SxProps<Theme> = {
   left: 8,
   top: "50%",
   transform: "translateY(-50%)",
-  color: "#fff",
-  background: "rgba(255,255,255,0.1)",
-  "&:hover": { background: "rgba(255,255,255,0.2)" },
+  color: 'rgba(244,184,193,0.7)',
+  background: 'rgba(255,255,255,0.05)',
+  border: '1px solid rgba(244,184,193,0.2)',
+  borderRadius: '50%',
+  '&:hover': {
+    background: 'rgba(244,184,193,0.1)',
+    borderColor: 'rgba(244,184,193,0.4)',
+  },
 };
 
 export const nextArrowSx: SxProps<Theme> = {
@@ -65,7 +74,12 @@ export const nextArrowSx: SxProps<Theme> = {
   right: 8,
   top: "50%",
   transform: "translateY(-50%)",
-  color: "#fff",
-  background: "rgba(255,255,255,0.1)",
-  "&:hover": { background: "rgba(255,255,255,0.2)" },
+  color: 'rgba(244,184,193,0.7)',
+  background: 'rgba(255,255,255,0.05)',
+  border: '1px solid rgba(244,184,193,0.2)',
+  borderRadius: '50%',
+  '&:hover': {
+    background: 'rgba(244,184,193,0.1)',
+    borderColor: 'rgba(244,184,193,0.4)',
+  },
 };
