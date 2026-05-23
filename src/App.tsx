@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Hero from "./components/Hero/Hero";
 import CountdownTimer from "./components/CountdownTimer/CountdownTimer";
@@ -8,8 +9,8 @@ import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
 import { photos } from "./data/photos";
 import { letters } from "./data/letters";
 
-const BIRTHDAY = "2026-06-15T00:00:00";
-const MUSIC_SRC = "/music/song.mp3";
+const BIRTHDAY = "2026-05-23T13:00:00";
+const MUSIC_SRC = `${import.meta.env.BASE_URL}music/song.mp3`;
 
 const scrollReveal = {
   hidden: { opacity: 0, y: 50 },
@@ -34,12 +35,19 @@ function AnimatedSection({ children }: { children: React.ReactNode }) {
 }
 
 function App() {
+  const [birthdayReached, setBirthdayReached] = useState(
+    () => new Date(BIRTHDAY) <= new Date(),
+  );
+
   return (
     <>
       <Hero name="גלי" targetSectionId="countdown" />
 
       <AnimatedSection>
-        <CountdownTimer date={BIRTHDAY} />
+        <CountdownTimer
+          date={BIRTHDAY}
+          onBirthdayReached={() => setBirthdayReached(true)}
+        />
       </AnimatedSection>
 
       <AnimatedSection>
@@ -54,7 +62,7 @@ function App() {
         <Surprise />
       </AnimatedSection>
 
-      <MusicPlayer src={MUSIC_SRC} />
+      <MusicPlayer src={MUSIC_SRC} autoPlay={birthdayReached} />
     </>
   );
 }

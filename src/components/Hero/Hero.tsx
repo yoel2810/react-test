@@ -45,7 +45,7 @@ export default function Hero({
 
       <motion.div {...fadeUpProps(0.4)}>
         <Typography sx={heroSubtextSx}>
-          אני כל כך שרוף עלייך, את לא מבינה אפילו כמה לדבר איתך עושה לי את היום
+          אני כל כך שרוף עלייך, את לא מבינה אפילו כמה, לדבר איתך עושה לי את היום
           (ושלא נדבר על לראות אותך). מקווה שזה לא קיצ'י מדי.
         </Typography>
       </motion.div>

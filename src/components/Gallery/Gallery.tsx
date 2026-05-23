@@ -1,5 +1,5 @@
-import { Box, Typography } from '@mui/material';
-import type { GalleryProps } from './Gallery.types';
+import { Box, Typography } from "@mui/material";
+import type { GalleryProps } from "./Gallery.types";
 import {
   sectionSx,
   headerSx,
@@ -9,14 +9,16 @@ import {
   cardSx,
   imageWrapSx,
   captionSx,
-} from './Gallery.styles';
+} from "./Gallery.styles";
 
 export default function Gallery({ photos }: GalleryProps) {
   return (
     <Box component="section" id="gallery" sx={sectionSx}>
       <Box sx={headerSx}>
-        <Typography sx={titleSx}>הזיכרונות שלנו</Typography>
-        <Typography sx={subtitleSx}>רגעים קפואים בזמן, לנצח בלבי</Typography>
+        <Typography sx={titleSx}>התמונות שלנו</Typography>
+        <Typography sx={subtitleSx}>
+          לגמרי אין לנו מספיק צריך להוסיף עוד :(
+        </Typography>
       </Box>
 
       <Box sx={gridSx}>
@@ -27,7 +29,7 @@ export default function Gallery({ photos }: GalleryProps) {
                 component="img"
                 src={photo.image}
                 alt={photo.alt}
-                sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                sx={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </Box>
             {photo.caption && (

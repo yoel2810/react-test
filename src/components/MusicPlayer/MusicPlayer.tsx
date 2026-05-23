@@ -1,18 +1,14 @@
-import { useState, useRef, useEffect } from 'react';
-import { Box, Tooltip } from '@mui/material';
-import { PlayArrow, Pause, MusicNote } from '@mui/icons-material';
+import { useRef, useEffect } from 'react';
 import type { MusicPlayerProps } from './MusicPlayer.types';
-import { fabSx } from './MusicPlayer.styles';
 
-export default function MusicPlayer({ src }: MusicPlayerProps) {
-  const [playing, setPlaying] = useState(false);
-  const [ready, setReady] = useState(false);
+export default function MusicPlayer({ src, autoPlay }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const playedRef = useRef(false);
 
   useEffect(() => {
     const audio = new Audio(src);
     audio.loop = true;
-    audio.addEventListener('canplaythrough', () => setReady(true));
+    audio.preload = 'auto';
     audioRef.current = audio;
     return () => {
       audio.pause();
@@ -20,31 +16,36 @@ export default function MusicPlayer({ src }: MusicPlayerProps) {
     };
   }, [src]);
 
-  const toggle = () => {
-    const audio = audioRef.current;
-    if (!audio || !ready) return;
-    if (playing) {
-      audio.pause();
-      setPlaying(false);
-    } else {
-      audio.play().then(() => setPlaying(true)).catch(() => {});
-    }
-  };
+  useEffect(() => {
+    if (!autoPlay) return;
 
-  const label = !ready ? 'טוען מוזיקה...' : playing ? 'השהה מוזיקה' : 'נגן מוזיקה';
-  const Icon = !ready ? MusicNote : playing ? Pause : PlayArrow;
+    const tryPlay = () => {
+      if (playedRef.current) return;
+      const audio = audioRef.current;
+      if (!audio) return;
+      audio.play().then(() => { playedRef.current = true; }).catch(() => {});
+    };
 
-  return (
-    <Tooltip title={label} placement="left">
-      <Box
-        sx={fabSx}
-        onClick={toggle}
-        role="button"
-        aria-label={label}
-        aria-pressed={playing}
-      >
-        <Icon fontSize="medium" />
-      </Box>
-    </Tooltip>
-  );
+    // Attempt immediately (works if a prior gesture already unlocked audio)
+    tryPlay();
+
+    // Fall back to first user gesture on the page
+    const onGesture = () => {
+      tryPlay();
+      document.removeEventListener('click', onGesture);
+      document.removeEventListener('touchstart', onGesture);
+      document.removeEventListener('keydown', onGesture);
+    };
+    document.addEventListener('click', onGesture);
+    document.addEventListener('touchstart', onGesture);
+    document.addEventListener('keydown', onGesture);
+
+    return () => {
+      document.removeEventListener('click', onGesture);
+      document.removeEventListener('touchstart', onGesture);
+      document.removeEventListener('keydown', onGesture);
+    };
+  }, [autoPlay]);
+
+  return null;
 }

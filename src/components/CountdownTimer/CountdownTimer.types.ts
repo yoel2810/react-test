@@ -1,5 +1,6 @@
 export interface CountdownTimerProps {
   date: string;
+  onBirthdayReached?: () => void;
 }
 
 export interface TimeLeft {
