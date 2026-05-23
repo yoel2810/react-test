@@ -33,6 +33,7 @@ export const heroHeadlineSx: SxProps<Theme> = {
   fontSize: { xs: '1.1rem', sm: '1.5rem', md: '1.85rem' },
   color: 'rgba(255,255,255,0.85)',
   mb: 2,
+  maxWidth: 600,
 };
 
 export const heroDividerSx: SxProps<Theme> = {

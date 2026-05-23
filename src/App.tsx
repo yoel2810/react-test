@@ -11,7 +11,7 @@ import LockScreen from "./components/LockScreen/LockScreen";
 import { photos } from "./data/photos";
 import { letters } from "./data/letters";
 
-const BIRTHDAY = "2026-05-23T15:42:30";
+const BIRTHDAY = "2026-05-26T00:00:00";
 const MUSIC_SRC = `${import.meta.env.BASE_URL}music/song.mp3`;
 
 const scrollReveal = {
@@ -48,7 +48,7 @@ function App() {
       particleCount: 150,
       spread: 90,
       origin: { y: 0.4 },
-      colors: ["#003366", "#c9a96e", "#4d6fa3", "#e8d0a3", "#ffffff"],
+      colors: ["#f4b8c1", "#e8929e", "#c9a96e", "#ffffff", "#1e1428"],
     });
   }, [birthdayReached]);
 

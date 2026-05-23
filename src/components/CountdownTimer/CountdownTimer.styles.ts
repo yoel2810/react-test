@@ -16,7 +16,7 @@ export const sectionSx: SxProps<Theme> = {
 
 export const sectionTitleSx: SxProps<Theme> = {
   fontFamily: '"Playfair Display", serif',
-  fontWeight: 600,
+  fontWeight: 700,
   fontSize: { xs: '2rem', md: '2.75rem' },
   color: 'rgba(255,255,255,0.85)',
   mb: 1,
