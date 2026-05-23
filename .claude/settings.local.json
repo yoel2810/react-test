@@ -11,7 +11,11 @@
       "Bash(node -e \"const d = require\\('./node_modules/@mui/material/Dialog/Dialog.js'\\); console.log\\(Object.keys\\(d\\)\\)\")",
       "Bash(node -e \"const {DialogProps} = require\\('./node_modules/@mui/material'\\); console.log\\('ok'\\)\")",
       "Bash(rtk grep *)",
-      "mcp__plugin_playwright_playwright__browser_navigate"
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "Bash(bash *)",
+      "Bash(npm install *)",
+      "Bash(git rm *)",
+      "Bash(Test-Path *)"
     ]
   }
 }

@@ -11,7 +11,7 @@ import LockScreen from "./components/LockScreen/LockScreen";
 import { photos } from "./data/photos";
 import { letters } from "./data/letters";
 
-const BIRTHDAY = "2026-05-26T00:00:00";
+const BIRTHDAY = "2026-05-23T15:42:30";
 const MUSIC_SRC = `${import.meta.env.BASE_URL}music/song.mp3`;
 
 const scrollReveal = {
