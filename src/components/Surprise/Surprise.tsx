@@ -39,7 +39,7 @@ export default function Surprise({
           ממש כאן, ממתין בסבלנות. יש דברים ששווה למצוא.
         </Typography>
         <Typography sx={sectionBodySx}>
-          אני אאהב אותך{" "}
+          אני אוהב אותך{" "}
           <Box
             component="span"
             sx={triggerWordSx}

@@ -36,7 +36,7 @@ export default function CountdownTimer({ date, onBirthdayReached }: CountdownTim
   const notifiedRef = useRef(false);
 
   useEffect(() => {
-    if (timeLeft === null && !notifiedRef.current) {
+    if (getTimeLeft(date) === null && !notifiedRef.current) {
       notifiedRef.current = true;
       onBirthdayReached?.();
     }

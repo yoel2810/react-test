@@ -26,11 +26,8 @@ export default function Lightbox({
   const photo = selectedIndex !== null ? photos[selectedIndex] : null;
   const isFirst = selectedIndex === 0;
   const isLast = selectedIndex === photos.length - 1;
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setLoaded(false);
-  }, [selectedIndex]);
+  const [loadedIndex, setLoadedIndex] = useState<number | null>(null);
+  const loaded = loadedIndex === selectedIndex;
 
   useEffect(() => {
     if (!open) return;
@@ -65,7 +62,7 @@ export default function Lightbox({
             src={photo.image}
             alt={photo.alt}
             sx={loaded ? imageSx : imageLoadingSx}
-            onLoad={() => setLoaded(true)}
+            onLoad={() => setLoadedIndex(selectedIndex)}
           />
           {loaded && photo.caption && (
             <Typography sx={captionSx}>{photo.caption}</Typography>
