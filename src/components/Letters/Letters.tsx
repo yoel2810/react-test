@@ -36,9 +36,9 @@ export default function Letters({ letters }: LettersProps) {
             <Box sx={cardHeaderSx} onClick={() => toggle(letter.id)}>
               <Typography sx={cardTitleSx}>{letter.title}</Typography>
               {openId === letter.id ? (
-                <ExpandLess sx={{ color: "#003366" }} />
+                <ExpandLess sx={{ color: "rgba(244,184,193,0.7)" }} />
               ) : (
-                <ExpandMore sx={{ color: "#003366" }} />
+                <ExpandMore sx={{ color: "rgba(244,184,193,0.7)" }} />
               )}
             </Box>
             <Collapse in={openId === letter.id} unmountOnExit>
