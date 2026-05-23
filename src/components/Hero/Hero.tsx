@@ -6,8 +6,11 @@ import {
   heroSectionSx,
   heroNameSx,
   heroHeadlineSx,
+  heroDividerSx,
   heroSubtextSx,
   scrollCtaSx,
+  scrollTextSx,
+  scrollArrowSx,
   floatingOrb1Sx,
   floatingOrb2Sx,
 } from "./Hero.styles";
@@ -43,6 +46,10 @@ export default function Hero({
         <Typography sx={heroHeadlineSx}>יום הולדת שמח, מיי לאב ✨</Typography>
       </motion.div>
 
+      <motion.div {...fadeUpProps(0.3)}>
+        <Box sx={heroDividerSx} />
+      </motion.div>
+
       <motion.div {...fadeUpProps(0.4)}>
         <Typography sx={heroSubtextSx}>
           אני כל כך שרוף עלייך, את לא מבינה אפילו כמה, לדבר איתך עושה לי את היום
@@ -57,16 +64,7 @@ export default function Hero({
         onClick={scrollToNext}
       >
         <Box sx={scrollCtaSx}>
-          <Typography
-            variant="body2"
-            sx={{
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              fontSize: "0.75rem",
-            }}
-          >
-            גלול לגלות
-          </Typography>
+          <Typography sx={scrollTextSx}>גלול לגלות</Typography>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{
@@ -75,7 +73,9 @@ export default function Hero({
               ease: "easeInOut" as const,
             }}
           >
-            <KeyboardArrowDown fontSize="large" />
+            <Box sx={scrollArrowSx}>
+              <KeyboardArrowDown />
+            </Box>
           </motion.div>
         </Box>
       </motion.div>
