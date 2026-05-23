@@ -1,12 +1,15 @@
-import { useEffect } from "react";
-import { Box, Dialog, IconButton, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Box, CircularProgress, Dialog, IconButton, Typography } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import type { LightboxProps } from "./Lightbox.types";
 import {
   dialogPaperSx,
   contentBoxSx,
+  imageWrapperSx,
   imageSx,
+  imageLoadingSx,
+  loaderSx,
   captionSx,
   prevArrowSx,
   nextArrowSx,
@@ -23,6 +26,11 @@ export default function Lightbox({
   const photo = selectedIndex !== null ? photos[selectedIndex] : null;
   const isFirst = selectedIndex === 0;
   const isLast = selectedIndex === photos.length - 1;
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [selectedIndex]);
 
   useEffect(() => {
     if (!open) return;
@@ -50,9 +58,16 @@ export default function Lightbox({
             <ArrowBackIosNewIcon />
           </IconButton>
         )}
-        <Box>
-          <Box component="img" src={photo.image} alt={photo.alt} sx={imageSx} />
-          {photo.caption && (
+        <Box sx={imageWrapperSx}>
+          {!loaded && <CircularProgress sx={loaderSx} />}
+          <Box
+            component="img"
+            src={photo.image}
+            alt={photo.alt}
+            sx={loaded ? imageSx : imageLoadingSx}
+            onLoad={() => setLoaded(true)}
+          />
+          {loaded && photo.caption && (
             <Typography sx={captionSx}>{photo.caption}</Typography>
           )}
         </Box>

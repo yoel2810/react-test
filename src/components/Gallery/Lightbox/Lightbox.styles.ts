@@ -4,6 +4,7 @@ export const dialogPaperSx: SxProps<Theme> = {
   background: "rgba(0, 0, 0, 0.95)",
   boxShadow: "none",
   m: 2,
+  overflow: "hidden",
 };
 
 export const contentBoxSx: SxProps<Theme> = {
@@ -14,11 +15,29 @@ export const contentBoxSx: SxProps<Theme> = {
   p: { xs: 4, sm: 6 },
 };
 
+export const imageWrapperSx: SxProps<Theme> = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: 200,
+  minWidth: 200,
+};
+
 export const imageSx: SxProps<Theme> = {
-  maxHeight: "80vh",
+  maxHeight: "calc(100vh - 200px)",
   maxWidth: "100%",
   objectFit: "contain",
   display: "block",
+};
+
+export const imageLoadingSx: SxProps<Theme> = {
+  ...imageSx,
+  display: "none",
+};
+
+export const loaderSx: SxProps<Theme> = {
+  color: "rgba(255,255,255,0.7)",
 };
 
 export const captionSx: SxProps<Theme> = {

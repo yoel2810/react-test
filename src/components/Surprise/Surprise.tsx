@@ -14,7 +14,9 @@ import {
   closeHintSx,
 } from "./Surprise.styles";
 
-export default function Surprise({ triggerLabel = "תמיד" }: SurpriseProps) {
+export default function Surprise({
+  triggerLabel = "תמיד (תלחצי עליי)",
+}: SurpriseProps) {
   const [open, setOpen] = useState(false);
 
   const close = useCallback(() => setOpen(false), []);
@@ -72,24 +74,13 @@ export default function Surprise({ triggerLabel = "תמיד" }: SurpriseProps) {
                   <Typography sx={overlayTitleSx}>מצאת את זה</Typography>
                   <div
                     className="tenor-gif-embed"
-                    data-postid="9206364076996243934"
-                    data-share-method="host"
                     data-aspect-ratio="1"
                     data-width="100%"
-                  >
-                    <a href="https://tenor.com/view/dog-long-ahh-pee-gif-9206364076996243934">
-                      Dog Long Ahh Pee GIF
-                    </a>
-                    from{" "}
-                    <a href="https://tenor.com/search/dog+long+ahh+pee-gifs">
-                      Dog Long Ahh Pee GIFs
-                    </a>
-                  </div>{" "}
-                  <script
-                    type="text/javascript"
-                    async
-                    src="https://tenor.com/embed.js"
-                  ></script>
+                  ></div>
+                  <img
+                    src="https://c.tenor.com/f8OTWcJHMd4AAAAd/tenor.gif"
+                    alt="pee"
+                  />
                   <Typography sx={overlayBodySx}>
                     פיפי כי אני יודע שאת אוהבת. את תמיד יכולה לסמן עליי
                     טריטוריה.
